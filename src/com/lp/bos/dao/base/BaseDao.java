@@ -1,6 +1,8 @@
 package com.lp.bos.dao.base;
 
 import com.lp.bos.model.PageBean;
+import com.lp.bos.model.Subarea;
+import org.hibernate.criterion.DetachedCriteria;
 
 import java.io.Serializable;
 import java.util.List;
@@ -46,4 +48,6 @@ public interface BaseDao<T> {
      * @param pb
      */
     public void pageQuery(PageBean<T> pb);
+
+    public List<T> findAllByDetachedCriteria(DetachedCriteria dc);
 }

@@ -4,6 +4,8 @@ import com.lp.bos.model.PageBean;
 import com.lp.bos.model.Staff;
 import com.lp.bos.service.base.BaseService;
 
+import java.util.List;
+
 public interface StaffService extends BaseService<Staff>{
 
 
@@ -18,4 +20,6 @@ public interface StaffService extends BaseService<Staff>{
      * @param ids 【001,002,003】 以豆号隔开
      */
     public void deleteBatch(String ids);
+
+    public List<Staff> findAllWithNoDelete();
 }

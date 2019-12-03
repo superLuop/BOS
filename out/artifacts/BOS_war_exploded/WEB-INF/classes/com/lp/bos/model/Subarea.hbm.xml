@@ -19,5 +19,9 @@
                      lazy="false"
                      column="region_id"
                      class="com.lp.bos.model.Region"></many-to-one>
+
+        <many-to-one name="decidedzone"
+                     column="decidedzone_id"
+                     class="com.lp.bos.model.Decidedzone"></many-to-one>
     </class>
 </hibernate-mapping>

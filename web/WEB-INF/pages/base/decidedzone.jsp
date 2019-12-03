@@ -44,7 +44,51 @@
 	}
 	
 	function doAssociations(){
-		$('#customerWindow').window('open');
+	    //是否选中定区
+        var selectedRows = $("#grid").datagrid('getSelections');
+
+        if(selectedRows.length == 1){
+            $('#customerWindow').window('open');
+
+            var decidedzoneId = selectedRows[0].id;//选中的定区id
+            //给隐藏定区id赋值
+            $('#customerDecidedZoneId').val(decidedzoneId);
+            //alert( $('#customerDecidedZoneId').val());
+            //return;
+            //显示未关联客户
+			var url = '${pageContext.request.contextPath}/decidedzone_findnoassociationCustomers.action';
+			$.post(url,function (data) {
+                    $('#noassociationSelect').empty();//清空
+                    //遍历数组
+                    for(var i =0;data.length;i++){
+                        //取一行数据
+                        var rowData = data[i];
+
+                        //动态给selected标签添加option
+                        var option = '<option value="'+rowData.id+'">'+rowData.name+'</option>';
+                        $('#noassociationSelect').append(option);
+                    }
+            });
+
+			//显示选中定区关联的客户
+            url = '${pageContext.request.contextPath}/decidedzone_findhasassociationCustomers.action';
+            $.post(url,{id:decidedzoneId},function (data) {
+                $('#associationSelect').empty();//清空
+                //遍历数组
+                for(var i =0;data.length;i++){
+                    //取一行数据
+                    var rowData = data[i];
+
+                    //动态给selected标签添加option
+                    var option = '<option value="'+rowData.id+'">'+rowData.name+'</option>';
+                    $('#associationSelect').append(option);
+                }
+            });
+
+		}else{
+            $.messager.alert('Tips','未选择一个定区','error');
+		}
+
 	}
 	
 	//工具栏
@@ -122,10 +166,10 @@
 			border : true,
 			rownumbers : true,
 			striped : true,
-			pageList: [30,50,100],
+			pageList: [3,6,9],
 			pagination : true,
 			toolbar : toolbar,
-			url : "json/decidedzone.json",
+			url : "${pageContext.request.contextPath}/decidedzone_pageQuery.action",
 			idField : 'id',
 			columns : columns,
 			onDblClickRow : doDblClickRow
@@ -155,7 +199,27 @@
 		$("#btn").click(function(){
 			alert("执行查询...");
 		});
+
+		$("#save").click(function () {
+			$("#addDeciedzoneForm").submit();
+        });
 		
+		
+		$("#toRight").click(function () {
+			$("#associationSelect").append($("#noassociationSelect option:selected"));
+        });
+
+        $("#toLeft").click(function () {
+            $("#noassociationSelect").append($("#associationSelect option:selected"));
+        });
+
+        $("#associationBtn").click(function () {
+            //把右边的select的option都设置为选中
+			$("#associationSelect option").attr('selected','selected');
+
+			//表单提交
+			$("#customerForm").submit();
+        });
 	});
 
 	function doDblClickRow(){
@@ -275,7 +339,7 @@
 		</div>
 		
 		<div style="overflow:auto;padding:5px;" border="false">
-			<form>
+			<form id="addDeciedzoneForm" action="${pageContext.request.contextPath}/decidedzone_save.action">
 				<table class="table-edit" width="80%" align="center">
 					<tr class="title">
 						<td colspan="2">定区信息</td>
@@ -291,17 +355,18 @@
 					<tr>
 						<td>选择负责人</td>
 						<td>
-							<input class="easyui-combobox" name="region.id"  
-    							data-options="valueField:'id',textField:'name',url:'json/standard.json'" />  
+							<input class="easyui-combobox" name="staff.id"
+    							data-options="valueField:'id',textField:'name',url:'${pageContext.request.contextPath}/staff_listJson.action'" />
 						</td>
 					</tr>
 					<tr height="300">
 						<td valign="top">关联分区</td>
 						<td>
-							<table id="subareaGrid"  class="easyui-datagrid" border="false" style="width:300px;height:300px" data-options="url:'json/decidedzone_subarea.json',fitColumns:true,singleSelect:false">
+							<table id="subareaGrid"  class="easyui-datagrid" border="false" style="width:300px;height:300px"
+								   data-options="url:'${pageContext.request.contextPath}/subarea_listJson.action',fitColumns:true,singleSelect:false">
 								<thead>  
 							        <tr>  
-							            <th data-options="field:'id',width:30,checkbox:true">编号</th>  
+							            <th data-options="field:'subareaId',width:30,checkbox:true">编号</th>
 							            <th data-options="field:'addresskey',width:150">关键字</th>  
 							            <th data-options="field:'position',width:200,align:'right'">位置</th>  
 							        </tr>  
@@ -347,8 +412,9 @@
 					</tr>
 					<tr>
 						<td>
-							<input type="hidden" name="id" id="customerDecidedZoneId" />
-							<select id="noassociationSelect" multiple="multiple" size="10"></select>
+							<input type="hidden" name="id" id="customerDecidedZoneId"/>
+							<select id="noassociationSelect" multiple="multiple" size="10">
+							</select>
 						</td>
 						<td>
 							<input type="button" value="》》" id="toRight"><br/>

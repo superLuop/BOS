@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
 public class StaffAction extends BaseAction<Staff> {
 
@@ -66,7 +67,12 @@ public class StaffAction extends BaseAction<Staff> {
 
         //3.返回json数据
         responseJson(pb,new String[]{"currentPage","pageSize","detachedCriteria"});
+    }
 
+    public void listJson() throws IOException {
+        //在职员工
+        List<Staff> list = staffService.findAllWithNoDelete();
 
+        responseJson(list,new String[]{"telephone","haspda","deltag","station","standard"});
     }
 }

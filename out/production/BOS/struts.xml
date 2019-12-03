@@ -46,14 +46,21 @@
             <result name="success">/WEB-INF/pages/base/staff.jsp</result>
 
         </action>
+
         <!--区域模块-->
         <action name="region_*" class="com.lp.bos.web.action.RegionAction" method="{1}">
 
             <result name="success">/WEB-INF/pages/base/region.jsp</result>
         </action>
+
         <!--分区模块-->
         <action name="subarea_*" class="com.lp.bos.web.action.SubareaAction" method="{1}">
             <result name="success">/WEB-INF/pages/base/subarea.jsp</result>
+        </action>
+
+        <!--定区模块-->
+        <action name="decidedzone_*" class="com.lp.bos.web.action.DecidedzoneAction" method="{1}">
+            <result name="success">/WEB-INF/pages/base/decidedzone.jsp</result>
         </action>
     </package>
 </struts>

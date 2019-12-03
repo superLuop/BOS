@@ -53,7 +53,7 @@
 		}
 
 		var idsStr = ids.join(',');//连接字符串
-		alert(idsStr);
+		// alert(idsStr);
 
 		//2.访问staff_delete.action?ids=A01,A02,A03
 		$.post(

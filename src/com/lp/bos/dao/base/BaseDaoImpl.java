@@ -30,10 +30,6 @@ public class BaseDaoImpl<T> implements BaseDao<T>{
 
         //把type类型赋值给Class类型
         entityClass = (Class<T>) types[0];
-        //System.out.println(entityClass);
-       /* for (Type type : types){
-            System.out.println(type);
-        }*/
     }
     @Autowired //由spring自动注入
     protected HibernateTemplate hibernateTemplate;
@@ -124,10 +120,15 @@ public class BaseDaoImpl<T> implements BaseDao<T>{
 
         //2.查询分页数据
         dc.setProjection(null);//把之前条件清空
-        //limit 0,10
+        dc.setResultTransformer(DetachedCriteria.ROOT_ENTITY);//重置hql
         int start = (pb.getCurrentPage() - 1) * pb.getPageSize();
         int length = pb.getPageSize();
         List<T> rows = (List<T>) hibernateTemplate.findByCriteria(dc,start,length);
         pb.setRows(rows);
+    }
+
+    @Override
+    public List<T> findAllByDetachedCriteria(DetachedCriteria dc) {
+        return (List<T>) hibernateTemplate.findByCriteria(dc);
     }
 }

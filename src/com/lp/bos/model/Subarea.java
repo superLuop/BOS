@@ -11,6 +11,22 @@ public class Subarea {
     private String single;
     private String position;
 
+    public String getSubareaId(){
+        return id;
+    }
+
+    //定区
+    private Decidedzone decidedzone;
+
+    public Decidedzone getDecidedzone() {
+        return decidedzone;
+    }
+
+    public void setDecidedzone(Decidedzone decidedzone) {
+        this.decidedzone = decidedzone;
+    }
+
+    //区域
     private Region region;//多对一
 
     public void setRegion(Region region) {

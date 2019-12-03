@@ -5,6 +5,8 @@ import com.lp.bos.model.PageBean;
 import com.lp.bos.model.Subarea;
 import com.lp.bos.service.SubareaService;
 import com.lp.bos.service.base.BaseServiceImpl;
+import org.hibernate.criterion.DetachedCriteria;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -47,5 +49,12 @@ public class SubareaServiceImpl extends BaseServiceImpl<Subarea> implements Suba
     @Override
     public void pageQuery(PageBean<Subarea> pb) {
         subareaDao.pageQuery(pb);
+    }
+
+    @Override
+    public List<Subarea> findAllWithUnbind() {
+        DetachedCriteria dc = DetachedCriteria.forClass(Subarea.class);
+        dc.add(Restrictions.isNull("decidedzone"));
+        return subareaDao.findAllByDetachedCriteria(dc);
     }
 }

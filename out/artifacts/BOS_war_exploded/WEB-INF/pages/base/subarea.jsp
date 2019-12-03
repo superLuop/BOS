@@ -44,7 +44,8 @@
 	}
 	
 	function doExport(){
-		alert("导出");
+		//alert("导出");
+		location.href = '${pageContext.request.contextPath}/subarea_exportExcel.action';
 	}
 	
 	function doImport(){
@@ -138,24 +139,29 @@
 		field : 'single',
 		title : '单双号',
 		width : 100,
-		align : 'center',
-		formatter : function(data,row, index){
-			if(data=="0"){
-				return "单双号";
-			}
-			if (data=="1") {
-				return "单号";
-			}if (data=="2") {
-				return "双号";
-			}
-		}
+		align : 'center'
 	} , {
 		field : 'position',
 		title : '位置',
 		width : 200,
 		align : 'center'
 	} ] ];
-	
+
+	//获取表彰的数据
+    function getFormData(formId) {
+        var form = document.getElementById(formId);
+        var data = {};
+        var tagElements = form.getElementsByTagName('input');
+
+        for (var j = 0; j < tagElements.length; j++){
+            var input = tagElements[j];
+            var n = input.name;
+            var v = input.value;
+            data[n] = v;
+        }
+        return data;
+    }
+
 	$(function(){
 		// 先将body隐藏，再显示，不会出现页面刷新效果
 		$("body").css({visibility:"visible"});
@@ -167,8 +173,8 @@
 			border : true,
 			rownumbers : true,
 			striped : true,
-			pageSize:3,
-			pageList: [3,6,9],
+			pageSize:2,
+			pageList: [2,4,6],
 			pagination : true,
 			toolbar : toolbar,
 			url : "${pageContext.request.contextPath}/subarea_pageQuery.action",
@@ -198,8 +204,14 @@
 	        height: 400,
 	        resizable:false
 	    });
-		$("#btn").click(function(){
-			alert("执行查询...");
+		$("#searchBtn").click(function(){
+			//alert("执行查询...");
+			//1.获取表单数据
+			var  data = getFormData("searchSubareaForm");
+			var s = JSON.stringify(data);
+
+			//2.调用grid的load方法
+			$("#grid").datagrid('load',data);
 		});
 		
 		$("#save").click(function () {
@@ -281,7 +293,7 @@
 	<!-- 查询分区 -->
 	<div class="easyui-window" title="查询分区窗口" id="searchWindow" collapsible="false" minimizable="false" maximizable="false" style="top:20px;left:200px">
 		<div style="overflow:auto;padding:5px;" border="false">
-			<form>
+			<form id="searchSubareaForm">
 				<table class="table-edit" width="80%" align="center">
 					<tr class="title">
 						<td colspan="2">查询条件</td>
@@ -303,7 +315,7 @@
 						<td><input type="text" name="addresskey"/></td>
 					</tr>
 					<tr>
-						<td colspan="2"><a id="btn" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-search'">查询</a> </td>
+						<td colspan="2"><a id="searchBtn" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-search'">查询</a> </td>
 					</tr>
 				</table>
 			</form>

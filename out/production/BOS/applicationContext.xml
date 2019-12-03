@@ -69,4 +69,10 @@
     <!--开启事务注解-->
     <tx:annotation-driven></tx:annotation-driven>
 
+
+    <!-- 配置远程调用的service-->
+    <bean id="customerService" class="org.springframework.remoting.caucho.HessianProxyFactoryBean">
+        <property name="serviceInterface" value="com.lp.crm.service.CustomerService"></property>
+        <property name="serviceUrl" value="http://localhost:8082/remoting/customer"/>
+    </bean>
 </beans>
