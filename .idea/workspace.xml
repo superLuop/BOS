@@ -7,69 +7,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="562d2c45-d575-4359-99fa-069be38f4711" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/lp/bos/dao/DecidedzoneDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/lp/bos/dao/impl/DecidedzoneDaoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/lp/bos/service/DecidedzoneService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/lp/bos/service/impl/DecidedzoneServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/lp/bos/web/action/DecidedzoneAction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/lp/crm/domain/Customer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/lp/crm/service/CustomerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/com/test/Customer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/com/test/CustomerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/com/test/Demo04.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/lib/hessian-4.0.33.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2019-12-02T103120.404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2019-12-02T103225.404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2019-12-02T103633.404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2019-12-02T103638.404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2019-12-02T103900.404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2019-12-02T104001.404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2019-12-02T104010.404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2019-12-02T104151.404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2019-12-02T104331.404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2019-12-02T104632.404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2019-12-02T104645.404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2019-12-03T094111.404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2019-12-03T100453.404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2019-12-03T103550.404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2019-12-03T103605.404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2019-12-03T103629.404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/433de368-bfcf-4f7b-a2dd-b53dae66a7d5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/433de368-bfcf-4f7b-a2dd-b53dae66a7d5.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/config/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/struts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/config/struts.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BOS_war_exploded/WEB-INF/classes/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BOS_war_exploded/WEB-INF/classes/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BOS_war_exploded/WEB-INF/classes/com/lp/bos/dao/base/BaseDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BOS_war_exploded/WEB-INF/classes/com/lp/bos/dao/base/BaseDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BOS_war_exploded/WEB-INF/classes/com/lp/bos/dao/base/BaseDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BOS_war_exploded/WEB-INF/classes/com/lp/bos/dao/base/BaseDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BOS_war_exploded/WEB-INF/classes/com/lp/bos/dao/impl/SubareaDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BOS_war_exploded/WEB-INF/classes/com/lp/bos/dao/impl/SubareaDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BOS_war_exploded/WEB-INF/classes/com/lp/bos/model/Decidedzone.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BOS_war_exploded/WEB-INF/classes/com/lp/bos/model/Decidedzone.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BOS_war_exploded/WEB-INF/classes/com/lp/bos/model/Decidedzone.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BOS_war_exploded/WEB-INF/classes/com/lp/bos/model/Decidedzone.hbm.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BOS_war_exploded/WEB-INF/classes/com/lp/bos/model/Subarea.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BOS_war_exploded/WEB-INF/classes/com/lp/bos/model/Subarea.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BOS_war_exploded/WEB-INF/classes/com/lp/bos/model/Subarea.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BOS_war_exploded/WEB-INF/classes/com/lp/bos/model/Subarea.hbm.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BOS_war_exploded/WEB-INF/classes/com/lp/bos/service/StaffService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BOS_war_exploded/WEB-INF/classes/com/lp/bos/service/StaffService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BOS_war_exploded/WEB-INF/classes/com/lp/bos/service/SubareaService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BOS_war_exploded/WEB-INF/classes/com/lp/bos/service/SubareaService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BOS_war_exploded/WEB-INF/classes/com/lp/bos/service/impl/StaffServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BOS_war_exploded/WEB-INF/classes/com/lp/bos/service/impl/StaffServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BOS_war_exploded/WEB-INF/classes/com/lp/bos/service/impl/SubareaServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BOS_war_exploded/WEB-INF/classes/com/lp/bos/service/impl/SubareaServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BOS_war_exploded/WEB-INF/classes/com/lp/bos/web/action/StaffAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BOS_war_exploded/WEB-INF/classes/com/lp/bos/web/action/StaffAction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BOS_war_exploded/WEB-INF/classes/com/lp/bos/web/action/SubareaAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BOS_war_exploded/WEB-INF/classes/com/lp/bos/web/action/SubareaAction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BOS_war_exploded/WEB-INF/classes/struts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BOS_war_exploded/WEB-INF/classes/struts.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BOS_war_exploded/WEB-INF/pages/base/decidedzone.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BOS_war_exploded/WEB-INF/pages/base/decidedzone.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BOS_war_exploded/WEB-INF/pages/base/subarea.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BOS_war_exploded/WEB-INF/pages/base/subarea.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BOS/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BOS/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BOS/com/lp/bos/dao/base/BaseDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BOS/com/lp/bos/dao/base/BaseDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BOS/com/lp/bos/dao/base/BaseDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BOS/com/lp/bos/dao/base/BaseDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BOS/com/lp/bos/dao/impl/SubareaDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BOS/com/lp/bos/dao/impl/SubareaDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BOS/com/lp/bos/model/Decidedzone.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BOS/com/lp/bos/model/Decidedzone.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BOS/com/lp/bos/model/Decidedzone.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BOS/com/lp/bos/model/Decidedzone.hbm.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BOS/com/lp/bos/model/Subarea.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BOS/com/lp/bos/model/Subarea.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BOS/com/lp/bos/model/Subarea.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BOS/com/lp/bos/model/Subarea.hbm.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BOS/com/lp/bos/service/StaffService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BOS/com/lp/bos/service/StaffService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BOS/com/lp/bos/service/SubareaService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BOS/com/lp/bos/service/SubareaService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BOS/com/lp/bos/service/impl/StaffServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BOS/com/lp/bos/service/impl/StaffServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BOS/com/lp/bos/service/impl/SubareaServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BOS/com/lp/bos/service/impl/SubareaServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BOS/com/lp/bos/web/action/StaffAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BOS/com/lp/bos/web/action/StaffAction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BOS/com/lp/bos/web/action/SubareaAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BOS/com/lp/bos/web/action/SubareaAction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BOS/struts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BOS/struts.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/lp/bos/dao/SubareaDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/lp/bos/dao/SubareaDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/lp/bos/dao/base/BaseDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/lp/bos/dao/base/BaseDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/lp/bos/dao/base/BaseDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/lp/bos/dao/base/BaseDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/lp/bos/dao/impl/SubareaDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/lp/bos/dao/impl/SubareaDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/lp/bos/model/Decidedzone.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/lp/bos/model/Decidedzone.hbm.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/lp/bos/model/Decidedzone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/lp/bos/model/Decidedzone.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/lp/bos/model/Subarea.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/lp/bos/model/Subarea.hbm.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/lp/bos/model/Subarea.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/lp/bos/model/Subarea.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/lp/bos/service/StaffService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/lp/bos/service/StaffService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/lp/bos/service/SubareaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/lp/bos/service/SubareaService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/lp/bos/service/impl/StaffServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/lp/bos/service/impl/StaffServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/lp/bos/service/impl/SubareaServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/lp/bos/service/impl/SubareaServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/lp/bos/web/action/StaffAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/lp/bos/web/action/StaffAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/lp/bos/web/action/SubareaAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/lp/bos/web/action/SubareaAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/pages/base/decidedzone.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/pages/base/decidedzone.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/pages/base/staff.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/pages/base/staff.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/pages/base/subarea.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/pages/base/subarea.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.idea/httpRequests/" />
@@ -114,11 +70,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/lp/bos/web/action/SubareaAction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-486">
-              <caret line="52" column="29" lean-forward="true" selection-start-line="52" selection-start-column="29" selection-end-line="52" selection-end-column="29" />
+            <state relative-caret-position="1485">
+              <caret line="76" column="47" selection-start-line="76" selection-start-column="47" selection-end-line="76" selection-end-column="47" />
               <folding>
                 <element signature="e#1300#1301#0" expanded="true" />
                 <element signature="e#1327#1328#0" expanded="true" />
@@ -130,8 +86,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/lp/bos/web/action/base/BaseAction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
-              <caret line="94" column="19" lean-forward="true" selection-start-line="94" selection-start-column="19" selection-end-line="94" selection-end-column="19" />
+            <state relative-caret-position="2025">
+              <caret line="94" column="19" selection-start-line="94" selection-start-column="19" selection-end-line="94" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -142,17 +98,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/pages/base/subarea.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="385">
-              <caret line="174" column="27" lean-forward="true" selection-start-line="174" selection-start-column="27" selection-end-line="174" selection-end-column="27" />
+            <state relative-caret-position="4698">
+              <caret line="174" column="27" selection-start-line="174" selection-start-column="27" selection-end-line="174" selection-end-column="27" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/pages/base/decidedzone.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="171" column="84" lean-forward="true" selection-start-line="171" selection-start-column="84" selection-end-line="171" selection-end-column="84" />
+            <state relative-caret-position="602">
+              <caret line="219" column="18" selection-start-line="219" selection-start-column="18" selection-end-line="219" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -160,8 +116,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/lp/bos/web/action/DecidedzoneAction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="14" column="35" lean-forward="true" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
+            <state relative-caret-position="162">
+              <caret line="14" column="35" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#967#968#0" expanded="true" />
@@ -191,9 +147,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="dummy://restClient/response29.html" root0="SKIP_INSPECTION" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -259,11 +212,11 @@
     <option name="FILTER_DEBUG" value="false" />
     <option name="CUSTOM_FILTER" />
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="413" />
-    <option name="y" value="93" />
-    <option name="width" value="1342" />
-    <option name="height" value="974" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="548" />
+    <option name="y" value="70" />
+    <option name="width" value="1346" />
+    <option name="height" value="980" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -271,110 +224,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="BOS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BOS" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BOS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BOS" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BOS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BOS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BOS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BOS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="lp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BOS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BOS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="lp" type="462c0819:PsiDirectoryNode" />
-              <item name="bos" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BOS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BOS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="lp" type="462c0819:PsiDirectoryNode" />
-              <item name="bos" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BOS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BOS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="lp" type="462c0819:PsiDirectoryNode" />
-              <item name="bos" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BOS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BOS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="lp" type="462c0819:PsiDirectoryNode" />
-              <item name="bos" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="action" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BOS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BOS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="lp" type="462c0819:PsiDirectoryNode" />
-              <item name="bos" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="action" type="462c0819:PsiDirectoryNode" />
-              <item name="base" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BOS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BOS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="lp" type="462c0819:PsiDirectoryNode" />
-              <item name="crm" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BOS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BOS" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BOS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BOS" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BOS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BOS" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BOS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BOS" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="base" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="ProjectPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -386,7 +238,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ClothesSupermarketSystem" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Project" />
@@ -724,7 +576,10 @@
       <workItem from="1575080118110" duration="18492000" />
       <workItem from="1575166842479" duration="9625000" />
       <workItem from="1575249487311" duration="18864000" />
-      <workItem from="1575335606646" duration="4275000" />
+      <workItem from="1575335606646" duration="6296000" />
+      <workItem from="1575356720860" duration="590000" />
+      <workItem from="1575422605319" duration="4019000" />
+      <workItem from="1575509907470" duration="985000" />
     </task>
     <task id="LOCAL-00001" summary="添加分区">
       <created>1575117625398</created>
@@ -733,7 +588,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575117625398</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="添加定区，并关联客户">
+      <created>1575341903977</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1575341903977</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -769,13 +631,12 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72040000" />
+    <option name="totallyTimeSpent" value="79655000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="600" y="131" width="1342" height="974" extended-state="0" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49817517" visible="true" weight="0.28861153" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49817517" visible="true" weight="0.2185501" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Persistence" order="3" sideWeight="0.5018248" side_tool="true" weight="0.2185501" />
@@ -786,7 +647,7 @@
       <window_info id="Web" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.22235434" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.20260021" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -820,7 +681,8 @@
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
     <MESSAGE value="添加分区" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加分区" />
+    <MESSAGE value="添加定区，并关联客户" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加定区，并关联客户" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -831,16 +693,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="81">
           <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/com/test/Demo01.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="412">
-          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1197,13 +1049,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/jdbc.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="1" column="40" selection-start-line="1" selection-start-column="40" selection-end-line="1" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/hibernate.cfg.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="81">
@@ -1232,10 +1077,62 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/lp/bos/model/Subarea.hbm.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="18" column="33" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/com/test/Demo01.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="15" column="21" lean-forward="true" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/jdbc.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="1" column="40" selection-start-line="1" selection-start-column="40" selection-end-line="1" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/lp/bos/web/action/SubareaAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1485">
+          <caret line="76" column="47" selection-start-line="76" selection-start-column="47" selection-end-line="76" selection-end-column="47" />
+          <folding>
+            <element signature="e#1300#1301#0" expanded="true" />
+            <element signature="e#1327#1328#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/lp/bos/web/action/base/BaseAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2025">
+          <caret line="94" column="19" selection-start-line="94" selection-start-column="19" selection-end-line="94" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/pages/base/subarea.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4698">
+          <caret line="174" column="27" selection-start-line="174" selection-start-column="27" selection-end-line="174" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/lp/bos/web/action/DecidedzoneAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="14" column="35" lean-forward="true" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
+        <state relative-caret-position="162">
+          <caret line="14" column="35" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#967#968#0" expanded="true" />
@@ -1246,43 +1143,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/pages/base/decidedzone.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="171" column="84" lean-forward="true" selection-start-line="171" selection-start-column="84" selection-end-line="171" selection-end-column="84" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/pages/base/subarea.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="174" column="27" lean-forward="true" selection-start-line="174" selection-start-column="27" selection-end-line="174" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/lp/bos/web/action/base/BaseAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="94" column="19" lean-forward="true" selection-start-line="94" selection-start-column="19" selection-end-line="94" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/lp/bos/model/Subarea.hbm.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="18" column="33" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/lp/bos/web/action/SubareaAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-486">
-          <caret line="52" column="29" lean-forward="true" selection-start-line="52" selection-start-column="29" selection-end-line="52" selection-end-column="29" />
-          <folding>
-            <element signature="e#1300#1301#0" expanded="true" />
-            <element signature="e#1327#1328#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="602">
+          <caret line="219" column="18" selection-start-line="219" selection-start-column="18" selection-end-line="219" selection-end-column="18" />
         </state>
       </provider>
     </entry>
