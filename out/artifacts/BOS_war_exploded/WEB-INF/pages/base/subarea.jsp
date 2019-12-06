@@ -147,7 +147,7 @@
 		align : 'center'
 	} ] ];
 
-	//获取表彰的数据
+	//获取表单的数据
     function getFormData(formId) {
         var form = document.getElementById(formId);
         var data = {};
@@ -205,7 +205,6 @@
 	        resizable:false
 	    });
 		$("#searchBtn").click(function(){
-			//alert("执行查询...");
 			//1.获取表单数据
 			var  data = getFormData("searchSubareaForm");
 			var s = JSON.stringify(data);

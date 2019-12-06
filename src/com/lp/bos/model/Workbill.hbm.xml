@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.lp.bos.model.Workbill" table="qp_workbill" schema="bos">
+        <id name="id" column="id">
+            <generator class="uuid"></generator>
+        </id>
+        <property name="type" column="type"/>
+        <property name="pickstate" column="pickstate"/>
+        <property name="buildtime" column="buildtime"/>
+        <property name="attachbilltimes" column="attachbilltimes"/>
+        <property name="remark" column="remark"/>
+
+        <!--配置业务通知单的外键-->
+        <many-to-one name="noticebill" class="com.lp.bos.model.Noticebill" fetch="select">
+            <column name="noticebill_id" length="32" />
+        </many-to-one>
+
+        <many-to-one name="staff" class="com.lp.bos.model.Staff" fetch="select">
+            <column name="staff_id" length="32" />
+        </many-to-one>
+    </class>
+
+</hibernate-mapping>

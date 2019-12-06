@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.lp.bos.model.Noticebill" table="qp_noticebill" schema="bos">
+        <id name="id" column="id">
+            <generator class="uuid"></generator>
+        </id>
+        <property name="customerId" column="customer_id"/>
+        <property name="customerName" column="customer_name"/>
+        <property name="delegater" column="delegater"/>
+        <property name="telephone" column="telephone"/>
+        <property name="pickaddress" column="pickaddress"/>
+        <property name="arrivecity" column="arrivecity"/>
+        <property name="product" column="product"/>
+        <property name="pickdate" column="pickdate"/>
+        <property name="num" column="num"/>
+        <property name="weight" column="weight"/>
+        <property name="volume" column="volume"/>
+        <property name="remark" column="remark"/>
+        <property name="ordertype" column="ordertype"/>
+
+        <!--客服-->
+        <many-to-one name="user" class="com.lp.bos.model.User">
+            <column name="user_id" length="32" />
+        </many-to-one>
+        <!--员工-->
+        <many-to-one name="staff" class="com.lp.bos.model.Staff">
+            <column name="staff_id" length="32" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

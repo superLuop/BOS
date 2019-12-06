@@ -12,8 +12,6 @@ import java.io.IOException;
 
 public class UserAction extends BaseAction<User> {
 
-    @Autowired
-    private UserService userService;
 
     public String login(){
 

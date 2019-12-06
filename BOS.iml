@@ -24,6 +24,7 @@
     <facet type="hibernate" name="Hibernate">
       <configuration>
         <datasource-map>
+          <unit-entry name="a.xml" value="433de368-bfcf-4f7b-a2dd-b53dae66a7d5" />
           <unit-entry name="hibernate.cfg.xml" />
           <unit-entry name="sessionFactory" />
         </datasource-map>

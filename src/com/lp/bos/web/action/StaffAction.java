@@ -12,8 +12,6 @@ import java.util.List;
 
 public class StaffAction extends BaseAction<Staff> {
 
-    @Autowired
-    private StaffService staffService;
     @Override
     public String save() {
         staffService.save(getModel());

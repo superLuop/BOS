@@ -56,7 +56,7 @@
             //alert( $('#customerDecidedZoneId').val());
             //return;
             //显示未关联客户
-			var url = '${pageContext.request.contextPath}/decidedzone_findnoassociationCustomers.action';
+			var url = '${pageContext.request.contextPath}/decidedzone_findnoassociationCustomers.action'
 			$.post(url,function (data) {
                     $('#noassociationSelect').empty();//清空
                     //遍历数组
@@ -65,13 +65,13 @@
                         var rowData = data[i];
 
                         //动态给selected标签添加option
-                        var option = '<option value="'+rowData.id+'">'+rowData.name+'</option>';
+                        var option = '<option value="'+rowData.id+'">'+rowData.name+'</option>'
                         $('#noassociationSelect').append(option);
                     }
             });
 
-			//显示选中定区关联的客户
-            url = '${pageContext.request.contextPath}/decidedzone_findhasassociationCustomers.action';
+			//显示选中定区关连的客户
+            url = '${pageContext.request.contextPath}/decidedzone_findhasassociationCustomers.action'
             $.post(url,{id:decidedzoneId},function (data) {
                 $('#associationSelect').empty();//清空
                 //遍历数组
@@ -80,7 +80,7 @@
                     var rowData = data[i];
 
                     //动态给selected标签添加option
-                    var option = '<option value="'+rowData.id+'">'+rowData.name+'</option>';
+                    var option = '<option value="'+rowData.id+'">'+rowData.name+'</option>'
                     $('#associationSelect').append(option);
                 }
             });
@@ -166,7 +166,7 @@
 			border : true,
 			rownumbers : true,
 			striped : true,
-			pageList: [3,6,9],
+			pageList: [30,50,100],
 			pagination : true,
 			toolbar : toolbar,
 			url : "${pageContext.request.contextPath}/decidedzone_pageQuery.action",

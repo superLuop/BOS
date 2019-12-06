@@ -19,8 +19,6 @@ import java.util.List;
 public class RegionAction extends BaseAction<Region>{
 
 
-    @Autowired
-    private RegionService regionService;
    private File excelFile;
 
     public void setExcelFile(File excelFile) {

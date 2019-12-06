@@ -32,11 +32,48 @@
 		
 		// 对save按钮条件 点击事件
 		$('#save').click(function(){
-			// 对form 进行校验
+			// 对form表单进行校验
 			if($('#noticebillForm').form('validate')){
 				$('#noticebillForm').submit();
+				$.messager.alert('提示','提交成功','info');
+				//提交成功后刷新当前界面
+				// window.location.reload();
+			}else {
+				$.messager.alert('提示','表单数据格式不正确','error');
 			}
 		});
+
+		//监听"来电电话"标签的失去焦点事件
+		$("input[name=telephone]").blur(function () {
+			//1.获取手号码
+			var tel = $("input[name=telephone]").val();
+			//校验手机号
+			$.extend($.fn.validatebox.defaults.rules, {
+				phoneNumber: {
+					validator: function (value, param) {
+						return /^1[3|4|5|7|8|9][0-9]{9}$/.test(value);
+					},
+					message: '请输入正确的手机号码!'
+				}
+			});
+			//2.发送请求，根据号码查找客户信息 noticebill_findCustomerByTel
+			var url = "${pageContext.request.contextPath}/noticebill_findCustomerByTel.action";
+			$.post(url,{tel:tel},function (data) {
+
+				//3.自动填充表格数据
+				//{"address":"天津","decidedzone_id":"","id":3,"name":"王五","station":"搜狗","telephone":"3"}
+           		//3.1 客户ID customerId
+                $("input[name=customerId]").val(data.id);
+                //3.2 客户名字 customerName
+                $("input[name=customerName]").val(data.name);
+				//3.3取件地址 pickaddress
+                $("input[name=pickaddress]").val(data.address);
+
+                //3.4定区id
+				$("input[name=decidedzoneId]").val(data.decidedzone_id);
+
+            });
+        });
 	});
 </script>
 </head>
@@ -51,7 +88,8 @@
 		</div>
 	</div>
 	<div region="center" style="overflow:auto;padding:5px;" border="false">
-		<form id="noticebillForm" action="" method="post">
+		<form id="noticebillForm" action="${pageContext.request.contextPath}/noticebill_save.action" method="post">
+			<input type="hidden" name="decidedzoneId">
 			<table class="table-edit" width="95%" align="center">
 				<tr class="title">
 					<td colspan="4">客户信息</td>
@@ -59,7 +97,7 @@
 				<tr>
 					<td>来电号码:</td>
 					<td><input type="text" class="easyui-validatebox" name="telephone"
-						required="true" /></td>
+						required="true"  data-options="validType:'phoneNumber'"/></td>
 					<td>客户编号:</td>
 					<td><input type="text" class="easyui-validatebox"  name="customerId"
 						required="true" /></td>

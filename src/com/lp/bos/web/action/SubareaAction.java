@@ -21,12 +21,8 @@ import java.util.List;
 
 public class SubareaAction extends BaseAction<Subarea>{
 
-    @Autowired
-    private SubareaService subareaService;
     @Override
     public String save() {
-//        System.out.println("数据1:" + getModel());
-//        System.out.println("数据1:" + getModel().getRegion());
 
         //调用service
         subareaService.save(getModel());
@@ -80,6 +76,7 @@ public class SubareaAction extends BaseAction<Subarea>{
         }
         //2.调用service,参数里传一个PageBean
         subareaService.pageQuery(pb);
+//        System.out.println(pb);
         /**
          * 注意：获取数据时候，把分区Subarea的Region的加载方式设置为即时加载
          */

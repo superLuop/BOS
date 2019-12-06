@@ -18,15 +18,13 @@ public class DecidedzoneAction extends BaseAction<Decidedzone>{
         this.subareaId = subareaId;
     }
 
-    @Autowired
-    private DecidedzoneService decidedzoneService;
 
     @Override
     public String save() {
 
         //调用service保存
         decidedzoneService.save(getModel(),subareaId);
-        return null;
+        return SUCCESS;
     }
 
     @Override
@@ -54,8 +52,6 @@ public class DecidedzoneAction extends BaseAction<Decidedzone>{
     }
 
     //==================获取关联定区的客户信息===========================
-    @Autowired
-    private CustomerService customerService;
 
     public void findhasassociationCustomers() throws IOException {
         List<Customer> list = customerService.findhasassociationCustomers(getModel().getId());
