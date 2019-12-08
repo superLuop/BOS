@@ -1,6 +1,8 @@
 package com.lp.bos.service.impl;
 
 import com.lp.bos.dao.UserDao;
+import com.lp.bos.model.PageBean;
+import com.lp.bos.model.Role;
 import com.lp.bos.model.User;
 import com.lp.bos.service.UserService;
 import com.lp.bos.service.base.BaseServiceImpl;
@@ -16,8 +18,6 @@ import java.util.List;
 @Transactional//事务是由事务管理器来实现
 public class UserServiceImpl extends BaseServiceImpl<User> implements UserService {
 
-    @Autowired
-    private UserDao userDao;
     @Override
     public User findByTel(String tel) {
         return null;
@@ -34,6 +34,21 @@ public class UserServiceImpl extends BaseServiceImpl<User> implements UserServic
         userDao.executeUpdate(hql,MD5Utils.text2md5(newPwd),userId);*/
 
         userDao.executeUpdateByQueryName("updatePwd",MD5Utils.text2md5(newPwd),userId);
+    }
+
+    @Override
+    public void save(User model, String[] roleIds) {
+        userDao.save(model);
+        for (String roleId : roleIds) {
+            Role role = new Role();
+            role.setId(roleId);
+            model.getRoles().add(role);
+        }
+    }
+
+    @Override
+    public void pageQuery(PageBean<User> pb) {
+        userDao.pageQuery(pb);
     }
 
     @Override

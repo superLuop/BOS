@@ -30,7 +30,9 @@
 	$(function(){
 		// 点击保存
 		$('#save').click(function(){
-			location.href='${pageContext.request.contextPath}/page_admin_function.action';
+			//location.href='${pageContext.request.contextPath}/page_admin_function.action';
+			$("#functionForm").submit();
+			$.messager.alert('提示','添加成功','info');
 		});
 	});
 </script>	
@@ -42,20 +44,21 @@
 	</div>
 </div>
 <div data-options="region:'center'">
-	<form id="functionForm" method="post">
+	<form id="functionForm" method="post" action="${pageContext.request.contextPath}/function_save.action">
 				<table class="table-edit" width="80%" align="center">
 					<tr class="title">
 						<td colspan="2">功能权限信息</td>
 					</tr>
 					<tr>
-						<td width="200">编号</td>
+						<td width="200">名称</td>
 						<td>
-							<input type="text" name="id" class="easyui-validatebox" data-options="required:true" />						
+							<input type="text" name="name" class="easyui-validatebox" data-options="required:true" />
 						</td>
 					</tr>
 					<tr>
-						<td>名称</td>
-						<td><input type="text" name="name" class="easyui-validatebox" data-options="required:true" /></td>
+						<%--用权限限制--%>
+						<td>关键字</td>
+						<td><input type="text" name="code" class="easyui-validatebox" data-options="required:true" /></td>
 					</tr>
 					<tr>
 						<td>访问路径</td>
@@ -64,7 +67,7 @@
 					<tr>
 						<td>是否生成菜单</td>
 						<td>
-							<select name="generateMenu" class="easyui-combobox">
+							<select name="generatemenu" class="easyui-combobox">
 								<option value="0">不生成</option>
 								<option value="1">生成</option>
 							</select>
@@ -79,7 +82,7 @@
 					<tr>
 						<td>父功能点</td>
 						<td>
-							<input name="parentFunction.id" class="easyui-combobox" data-options="valueField:'id',textField:'info',url:''"/>
+							<input name="function.id" class="easyui-combobox" data-options="valueField:'id',textField:'name',url:'${pageContext.request.contextPath}/function_listJson.action'"/>
 						</td>
 					</tr>
 					<tr>

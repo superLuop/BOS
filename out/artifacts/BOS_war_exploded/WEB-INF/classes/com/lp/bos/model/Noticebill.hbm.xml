@@ -23,12 +23,18 @@
         <property name="ordertype" column="ordertype"/>
 
         <!--客服-->
-        <many-to-one name="user" class="com.lp.bos.model.User">
+        <many-to-one name="user" class="com.lp.bos.model.User" fetch="select">
             <column name="user_id" length="32" />
         </many-to-one>
         <!--员工-->
-        <many-to-one name="staff" class="com.lp.bos.model.Staff">
+        <many-to-one name="staff" class="com.lp.bos.model.Staff" fetch="select">
             <column name="staff_id" length="32" />
         </many-to-one>
+        <set name="workBills" inverse="true">
+            <key>
+                <column name="noticebill_id" length="32" />
+            </key>
+            <one-to-many class="com.lp.bos.model.Workbill" />
+        </set>
     </class>
 </hibernate-mapping>

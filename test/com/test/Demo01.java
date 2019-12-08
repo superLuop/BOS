@@ -2,6 +2,7 @@ package com.test;
 
 import com.lp.bos.dao.UserDao;
 import com.lp.bos.model.User;
+import com.lp.bos.utils.MD5Utils;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +31,7 @@ public class Demo01 {
         //1.创建User
         User user = new User();
         user.setUsername("PLuo");
-        user.setPassword("123456");
+        user.setPassword(MD5Utils.text2md5("123456"));
 
         //2.调用dao【保存用户】
         userDao.save(user);

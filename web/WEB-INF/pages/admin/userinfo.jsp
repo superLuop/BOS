@@ -29,8 +29,22 @@
 <script type="text/javascript">
 	$(function(){
 		$("body").css({visibility:"visible"});
+
+		//发个请求给后台
+		$.post(
+		    "${pageContext.request.contextPath}/role_listJson.action",
+			function (data) {
+		        for(var i=0;i<data.length;i++){
+		            var item = data[i];
+
+		            var inputTag = '<input type="checkbox" value="'+item.id+'" name="roleIds">' + item.name;
+		            $("#roleTd").append(inputTag);
+				}
+            });
+
 		$('#save').click(function(){
 			$('#form').submit();
+			$.messager.alert('提示','添加成功','info');
 		});
 	});
 </script>	
@@ -42,7 +56,7 @@
 		</div>
 	</div>
     <div region="center" style="overflow:auto;padding:5px;" border="false">
-       <form id="form" method="post" >
+       <form id="form" method="post" action="${pageContext.request.contextPath}/user_save.action">
            <table class="table-edit"  width="95%" align="center">
            		<tr class="title"><td colspan="4">基本信息</td></tr>
 	           	<tr><td>用户名:</td><td><input type="text" name="username" id="username" class="easyui-validatebox" required="true" /></td>
@@ -73,7 +87,9 @@
 						<input type="text" name="telephone" id="telephone" class="easyui-validatebox" required="true" />
 					</td>
 				</tr>
-	           	<tr><td>备注:</td><td colspan="3"><textarea style="width:80%"></textarea></td></tr>
+	           	<tr><td>备注:</td><td colspan="3"><textarea name="remark" style="width:80%"></textarea></td></tr>
+	           	<tr><td>角色:</td><td colspan="3" id="roleTd">
+				</td></tr>
            </table>
        </form>
 	</div>

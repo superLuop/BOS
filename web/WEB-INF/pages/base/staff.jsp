@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -56,21 +57,20 @@
 		// alert(idsStr);
 
 		//2.访问staff_delete.action?ids=A01,A02,A03
-		$.post(
-		    '${pageContext.request.contextPath}/staff_delete.action',
-			{ids:idsStr},
-			function (data) {
-		        if(data == 'success'){
-                    $.messager.alert('提示','作废更新成功','info');
-                    //重新刷新当前页数据【自己找】
-                    $('#grid').datagrid('reload');
-				}else{
-                    $.messager.alert('提示','作废更新失败','error');
+			$.post(
+				'${pageContext.request.contextPath}/staff_delete.action',
+				{ids:idsStr},
+				function (data) {
+					if(data == 'success'){
+						$.messager.alert('提示','作废更新成功','info');
+						//重新刷新当前页数据【自己找】
+						$('#grid').datagrid('reload');
+					}else{
+						$.messager.alert('提示','作废更新失败','error');
+					}
+
 				}
-
-            }
-		);
-
+			);
 	}
 	
 	function doRestore(){
@@ -246,7 +246,9 @@
 	<div class="easyui-window" title="对收派员进行添加或者修改" id="addStaffWindow" collapsible="false" minimizable="false" maximizable="false" style="top:20px;left:200px">
 		<div region="north" style="height:31px;overflow:hidden;" split="false" border="false" >
 			<div class="datagrid-toolbar">
-				<a id="save" icon="icon-save" href="#" class="easyui-linkbutton" plain="true" >保存</a>
+				<shiro:hasPermission name="staff_add">
+					<a id="save" icon="icon-save" href="#" class="easyui-linkbutton" plain="true" >保存</a>
+				</shiro:hasPermission>
 			</div>
 		</div>
 		

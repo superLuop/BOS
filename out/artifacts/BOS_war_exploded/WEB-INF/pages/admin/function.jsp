@@ -39,7 +39,10 @@
 					}
 				}           
 			],
-			url : '',
+            pagination : true,
+			pageList:[5,10,15],
+			pageSize:10,
+			url : '${pageContext.request.contextPath}/function_pageQuery.action',
 			columns : [[
 			  {
 				  field : 'id',
@@ -57,8 +60,15 @@
 				  width : 200
 			  },  
 			  {
-				  field : 'generateMenu',
+				  field : 'generatemenu',
 				  title : '是否生成菜单',
+                  formatter : function(data ,row, index){
+                      if(data=="1"){
+                          return "生成";
+                      }else{
+                          return "不生成";
+                      }
+                  },
 				  width : 200
 			  },  
 			  {

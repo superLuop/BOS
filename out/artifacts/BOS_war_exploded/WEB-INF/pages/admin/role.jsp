@@ -47,7 +47,7 @@
 					}
 				}           
 			],
-			url : '',
+			url : '${pageContext.request.contextPath}/role_pageQuery.action?page=1&rows=20',
 			columns : [[
 				{
 					field : 'id',

@@ -1,10 +1,15 @@
 package com.lp.bos.web.action;
 
 import com.lp.bos.model.User;
-import com.lp.bos.service.UserService;
+import com.lp.bos.utils.MD5Utils;
 import com.lp.bos.web.action.base.BaseAction;
+import org.apache.commons.lang.ArrayUtils;
+import org.apache.log4j.Logger;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.AuthenticationException;
+import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.subject.Subject;
 import org.apache.struts2.ServletActionContext;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -12,9 +17,12 @@ import java.io.IOException;
 
 public class UserAction extends BaseAction<User> {
 
+    //创建了一个日志对象
+    Logger logger = Logger.getLogger(UserAction.class);
 
     public String login(){
 
+        logger.info(getModel());
         //1.获取参数
         String username = getModel().getUsername();
         String password = getModel().getPassword();
@@ -24,25 +32,50 @@ public class UserAction extends BaseAction<User> {
         String serverCheckCode = (String) request.getSession().getAttribute("key");
         String clientCheckCode = request.getParameter("checkcode");
         if(serverCheckCode.equalsIgnoreCase(clientCheckCode)){//验证码正确
-            //2.调用service
-            User user = userService.login(username,password);
-            //3.判断登录状态
-            if(user != null){
-                request.getSession().setAttribute("loginUser",user);
-                return "home";//主页面-后台页面
-            }else{
+            /**
+             * 使用shiro，就不再使用userService的login方法来登录
+             * 而是使用Subject的login方法
+             */
+            //获取一个Subject
+            Subject subject = SecurityUtils.getSubject();
+            //创建一个Token，这个对象存着用户名和密码
+            UsernamePasswordToken token = new UsernamePasswordToken(username, MD5Utils.text2md5(password));
+            try {
+                subject.login(token);//内部就会执行Realm的代码
+                //登陆成功
+                User loginUser = (User) subject.getPrincipal();
+                subject.getSession().setAttribute("loginUser",loginUser);
+                return "home";
+            }catch (AuthenticationException e){
+                e.printStackTrace();
                 addActionError("登录失败，用户名或密码不正确");
             }
         }else{
             //System.out.println("验证码不正确");
-            addActionError("验证码不正确");
+            addActionError("登录失败，验证码不正确");
         }
         return "loginFailure";
     }
 
+    private String[] roleIds;
+
+    public void setRoleIds(String[] roleIds) {
+        this.roleIds = roleIds;
+    }
+
     @Override
     public String save() {
-        return null;
+//        System.out.println(getModel());
+//        System.out.println(ArrayUtils.toString(roleIds));
+        //修改密码
+        String pwd = MD5Utils.text2md5(getModel().getPassword());
+        getModel().setPassword(pwd);
+        if (roleIds != null && roleIds.length != 0){
+            userService.save(getModel(),roleIds);
+        }else {
+            logger.info("roleIds不能为空....");
+        }
+        return "submit";
     }
 
     @Override
@@ -85,5 +118,11 @@ public class UserAction extends BaseAction<User> {
         response.getWriter().print("{\"success\":\"1\"}");
 
         return NONE;
+    }
+    public void pageQuery() throws IOException {
+        pb.setCurrentPage(page);
+        pb.setPageSize(rows);
+        userService.pageQuery(pb);
+        responseJson(pb,new String[]{"currentPage","pageSize","detachedCriteria","roles"});
     }
 }

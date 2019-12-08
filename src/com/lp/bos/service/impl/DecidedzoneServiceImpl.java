@@ -18,12 +18,6 @@ import java.util.List;
 @Transactional//事务是由事务管理器来实现
 public class DecidedzoneServiceImpl extends BaseServiceImpl<Decidedzone> implements DecidedzoneService {
 
-    @Autowired
-    private DecidedzoneDao decidedzoneDao;
-
-    @Autowired
-    private SubareaDao subareaDao;
-
     @Override
     public void save(Decidedzone dz, String[] subareaIds) {
 

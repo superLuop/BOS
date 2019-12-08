@@ -1,8 +1,6 @@
 package com.lp.bos.model;
 
-import javax.persistence.*;
 import java.sql.Date;
-import java.util.Objects;
 
 public class Workordermanage {
     private String id;

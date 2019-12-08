@@ -81,7 +81,7 @@ public class SubareaAction extends BaseAction<Subarea>{
          * 注意：获取数据时候，把分区Subarea的Region的加载方式设置为即时加载
          */
         //3.返回json数据
-        responseJson(pb,new String[]{"currentPage","pageSize","detachedCriteria","subareas"});
+        responseJson(pb,new String[]{"currentPage","pageSize","detachedCriteria","subareas","decidedzone"});
 
     }
 
@@ -102,6 +102,7 @@ public class SubareaAction extends BaseAction<Subarea>{
 
         //4.查询数据
         List<Subarea> subareas = subareaService.findAll();
+//        System.out.println(subareas);
         for (Subarea s : subareas) {
             row = sheet.createRow(sheet.getLastRowNum() + 1);
             row.createCell(0).setCellValue(s.getId());

@@ -16,9 +16,6 @@ import java.util.List;
 @Transactional//事务是由事务管理器来实现
 public class RegionServiceImpl extends BaseServiceImpl<Region> implements RegionService {
 
-
-    @Autowired
-    private RegionDao regionDao;
     @Override
     public void save(Region entity) {
         regionDao.save(entity);

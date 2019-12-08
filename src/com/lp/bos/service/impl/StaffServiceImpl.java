@@ -18,10 +18,6 @@ import java.util.List;
 @Transactional//事务是由事务管理器来实现
 public class StaffServiceImpl extends BaseServiceImpl<Staff> implements StaffService {
 
-
-    @Autowired
-    private StaffDao staffDao;
-
     @Override
     public void save(Staff entity) {
         staffDao.save(entity);
@@ -46,7 +42,7 @@ public class StaffServiceImpl extends BaseServiceImpl<Staff> implements StaffSer
         staff.setStation(entity.getStation());
         staff.setHaspda(entity.getHaspda());
         staff.setStandard(entity.getStandard());
-        System.out.println("数据库：" + staff);
+//        System.out.println("数据库：" + staff);
     }
 
     @Override

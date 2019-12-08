@@ -1,11 +1,8 @@
 package com.lp.bos.web.action;
 
 import com.lp.bos.model.Decidedzone;
-import com.lp.bos.service.DecidedzoneService;
 import com.lp.bos.web.action.base.BaseAction;
 import com.lp.crm.domain.Customer;
-import com.lp.crm.service.CustomerService;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.IOException;
 import java.util.List;

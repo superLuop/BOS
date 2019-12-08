@@ -3,6 +3,8 @@ package com.lp.bos.web.action;
 import com.lp.bos.model.Staff;
 import com.lp.bos.service.StaffService;
 import com.lp.bos.web.action.base.BaseAction;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.apache.struts2.ServletActionContext;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -12,6 +14,7 @@ import java.util.List;
 
 public class StaffAction extends BaseAction<Staff> {
 
+    //@RequiresPermissions("staff_add")
     @Override
     public String save() {
         staffService.save(getModel());
@@ -34,6 +37,8 @@ public class StaffAction extends BaseAction<Staff> {
     }
     @Override
     public String delete() throws IOException {
+
+        SecurityUtils.getSubject().checkPermission("staff_delete");
         //1.获取删除的id
 
         //2.调用service

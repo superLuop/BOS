@@ -75,4 +75,42 @@
         <property name="serviceInterface" value="com.lp.crm.service.CustomerService"></property>
         <property name="serviceUrl" value="http://localhost:8082/remoting/customer"/>
     </bean>
+
+    <!-- 配置shiro相关内容-->
+    <!--1.配置id为shiroFilter的工厂bean
+        注意:id的名字要与过滤器中配置的一样
+    -->
+    <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+        <property name="securityManager" ref="securityManager"></property>
+        <!--配置登录页面-->
+        <property name="loginUrl" value="/login.jsp"></property>
+
+        <!--配置拦截规则
+        permission：权限-->
+        <property name="filterChainDefinitions">
+            <value>
+                /validatecode.jsp* = anon
+                /user_login.action = anon
+                /* = authc
+            </value>
+        </property>
+    </bean>
+    <!--2.配置shiro的安全管理者-->
+    <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+        <!--配置一realm对象-->
+        <property name="realm" ref="realm"></property>
+    </bean>
+    <!--3.配置一个realm对象,这个对象要实现写一个实现类,实现抽象类AuthorizingRealm-->
+    <bean id="realm" class="com.lp.bos.web.realm.BOSRealm"></bean>
+
+    <!--4.如果要使用注解来配置权限，需要声明一个代理和切面
+        自动代理，会自动扫描权限注解
+    -->
+<!--    <bean id="defaultAdvisorAutoProxyCreator" class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator">-->
+<!--        &lt;!&ndash;使用cglib实现代理&ndash;&gt;-->
+<!--        <property name="proxyTargetClass" value="true"></property>-->
+<!--    </bean>-->
+<!--    <bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor"></bean>-->
+<!--        &lt;!&ndash;配置action&ndash;&gt;-->
+<!--    <bean class="com.lp.bos.web.action.StaffAction" scope="prototype"></bean>-->
 </beans>

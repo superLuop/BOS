@@ -2,7 +2,9 @@ package com.lp.bos.model;
 
 import javax.persistence.*;
 import java.sql.Date;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 public class Noticebill {
     private String id;
@@ -19,9 +21,18 @@ public class Noticebill {
     private String volume;
     private String remark;
     private String ordertype;
+    private Set workBills = new HashSet(0);
 
     private Staff staff;//取派员
     private User user;//客服
+
+    public Set getWorkBills() {
+        return workBills;
+    }
+
+    public void setWorkBills(Set workBills) {
+        this.workBills = workBills;
+    }
 
     public Staff getStaff() {
         return staff;

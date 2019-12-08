@@ -1,15 +1,10 @@
 package com.lp.bos.service.impl;
 
-import com.lp.bos.dao.DecidedzoneDao;
-import com.lp.bos.dao.SubareaDao;
 import com.lp.bos.model.*;
-import com.lp.bos.service.DecidedzoneService;
 import com.lp.bos.service.NoticebillService;
 import com.lp.bos.service.base.BaseServiceImpl;
 import com.lp.bos.utils.ContextUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.struts2.ServletActionContext;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -20,7 +15,6 @@ import java.util.List;
 @Service
 @Transactional//事务是由事务管理器来实现
 public class NoticebillServiceImpl extends BaseServiceImpl<Noticebill> implements NoticebillService {
-
 
     @Override
     public void save(Noticebill entity) {

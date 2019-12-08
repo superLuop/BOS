@@ -1,8 +1,11 @@
 package com.lp.bos.model;
 
+import java.io.Serializable;
 import java.sql.Date;
+import java.util.HashSet;
+import java.util.Set;
 
-public class User {
+public class User implements Serializable {
     private String id;
     private String username;
     private String password;
@@ -12,6 +15,15 @@ public class User {
     private String station;
     private String telephone;
     private String remark;
+    private Set<Role> roles = new HashSet<Role>();
+
+    public Set<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
+    }
 
     public String getId() {
         return id;

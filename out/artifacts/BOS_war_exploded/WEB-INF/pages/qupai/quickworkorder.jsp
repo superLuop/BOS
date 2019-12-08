@@ -165,6 +165,12 @@
 			onAfterEdit : function(rowIndex, rowData, changes){
 				console.info(rowData);
 				editIndex = undefined;
+				var url = "${pageContext.request.contextPath}/workOrderManage_save.action";
+				$.post(url,rowData,function(data){
+					console.info(data);
+				},"json");
+
+				$("#grid").datagrid('reload');
 			}
 		});
 	});

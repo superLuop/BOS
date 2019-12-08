@@ -55,10 +55,26 @@ public abstract class BaseAction<T> extends ActionSupport implements ModelDriven
     @Autowired
     protected NoticebillService noticebillService;
 
+    @Autowired
+    protected WorkOrderManageService workOrderManageService;
+
+    @Autowired
+    protected FunctionService functionService;
+
+    @Autowired
+    protected RoleService roleService;
+
     //空参构造方法实现t的实例化
     public BaseAction(){
         //1.获取t的真实类型
-        ParameterizedType pt = (ParameterizedType) this.getClass().getGenericSuperclass();
+        ParameterizedType pt= (ParameterizedType) this.getClass().getGenericSuperclass();
+
+//        if(this.getClass().getGenericSuperclass() instanceof ParameterizedType){
+//            //1.获取t的真实类型
+//             pt = (ParameterizedType) this.getClass().getGenericSuperclass();
+//        }else{
+//             pt = (ParameterizedType) this.getClass().getSuperclass().getGenericSuperclass();
+//        }
 
         //获取泛型真实类型
         Type[] types = pt.getActualTypeArguments();

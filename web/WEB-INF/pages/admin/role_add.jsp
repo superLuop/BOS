@@ -51,7 +51,7 @@
 		};
 		
 		$.ajax({
-			url : '${pageContext.request.contextPath}/json/menu.json',
+			url : '${pageContext.request.contextPath}/function_listJson.action',
 			type : 'POST',
 			dataType : 'text',
 			success : function(data) {
@@ -67,7 +67,33 @@
 		
 		// 点击保存
 		$('#save').click(function(){
-			location.href='${pageContext.request.contextPath}/page_admin_privilege.action';
+		    //1.如何获取选中的权限的id
+            var treeObj = $.fn.zTree.getZTreeObj("functionTree");
+            var nodes = treeObj.getCheckedNodes(true);
+            var ids = new Array();
+
+            if(nodes.length == 0){
+                $.messager.alert("tip","没有选择权限","error");
+                return;
+			}
+
+            for(var i = 0; i < nodes.length; i++){
+                var id = nodes[i].id;
+                ids.push(id);
+            }
+            //拼接所有id
+            var idsStr = ids.join(",");
+			//给隐藏字段赋值
+			$("input[name=functionIds]").val(idsStr);
+
+			// alert(idsStr);
+			//2.表单提交
+			if(!$("#roleForm").form('validate')){
+				$.messager.alert("tip","表单数据不正确","error");
+				return;
+			}
+            $("#roleForm").submit();
+			$.messager.alert('提示','添加成功','info');
 		});
 	});
 </script>	
@@ -79,20 +105,20 @@
 			</div>
 		</div>
 		<div region="center" style="overflow:auto;padding:5px;" border="false">
-			<form id="roleForm" method="post">
+			<form id="roleForm" method="post" action="${pageContext.request.contextPath}/role_save.action">
 				<table class="table-edit" width="80%" align="center">
 					<tr class="title">
 						<td colspan="2">角色信息</td>
 					</tr>
 					<tr>
-						<td width="200">编号</td>
+						<td width="200">名字</td>
 						<td>
-							<input type="text" name="id" class="easyui-validatebox" data-options="required:true" />						
+							<input type="text" name="name" class="easyui-validatebox" data-options="required:true" />
 						</td>
 					</tr>
 					<tr>
-						<td>名称</td>
-						<td><input type="text" name="name" class="easyui-validatebox" data-options="required:true" /></td>
+						<td>关键字</td>
+						<td><input type="text" name="code" class="easyui-validatebox" data-options="required:true" /></td>
 					</tr>
 					<tr>
 						<td>描述</td>
@@ -103,6 +129,7 @@
 					<tr>
 						<td>授权</td>
 						<td>
+							<input name="functionIds" type="hidden">
 							<ul id="functionTree" class="ztree"></ul>
 						</td>
 					</tr>

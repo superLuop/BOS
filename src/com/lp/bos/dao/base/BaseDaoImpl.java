@@ -57,7 +57,7 @@ public class BaseDaoImpl<T> implements BaseDao<T>{
 
     @Override
     public List<T> findAll() {
-        String hql = "from " + entityClass.getSimpleName() + "order by desc";
+        String hql = "from " + entityClass.getSimpleName();
         System.out.println("hql:" + hql);
         return (List<T>) this.hibernateTemplate.find(hql);
     }
