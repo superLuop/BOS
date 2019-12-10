@@ -1,6 +1,6 @@
 package com.lp.bos.model;
 
-import java.sql.Date;
+import java.util.Date;
 
 public class Workordermanage {
     private String id;
@@ -20,8 +20,17 @@ public class Workordermanage {
     private Integer feeitemnum;
     private Double actlweit;
     private String vol;
-    private String managerCheck;
+    private String managerCheck = "0";//0:未审核 1：审核
     private Date updatetime;
+    private String start = "0";//0:未启动配送流程 1:启动配送流程
+
+    public String getStart() {
+        return start;
+    }
+
+    public void setStart(String start) {
+        this.start = start;
+    }
 
     public String getId() {
         return id;
@@ -177,26 +186,8 @@ public class Workordermanage {
 
     @Override
     public String toString() {
-        return "Workordermanage{" +
-                "id='" + id + '\'' +
-                ", arrivecity='" + arrivecity + '\'' +
-                ", product='" + product + '\'' +
-                ", num=" + num +
-                ", weight=" + weight +
-                ", floadreqr='" + floadreqr + '\'' +
-                ", prodtimelimit='" + prodtimelimit + '\'' +
-                ", prodtype='" + prodtype + '\'' +
-                ", sendername='" + sendername + '\'' +
-                ", senderphone='" + senderphone + '\'' +
-                ", senderaddr='" + senderaddr + '\'' +
-                ", receivername='" + receivername + '\'' +
-                ", receiverphone='" + receiverphone + '\'' +
-                ", receiveraddr='" + receiveraddr + '\'' +
-                ", feeitemnum=" + feeitemnum +
-                ", actlweit=" + actlweit +
-                ", vol='" + vol + '\'' +
-                ", managerCheck='" + managerCheck + '\'' +
-                ", updatetime=" + updatetime +
-                '}';
+        return "工作单信息 [编号=" + id + ", 货物名称=" + product
+                + ", 货物重量=" + weight + ", 收货人="
+                + receivername + ", 收货人电话=" + receiverphone + "]";
     }
 }

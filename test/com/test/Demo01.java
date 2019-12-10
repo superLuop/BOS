@@ -30,8 +30,8 @@ public class Demo01 {
 
         //1.创建User
         User user = new User();
-        user.setUsername("PLuo");
-        user.setPassword(MD5Utils.text2md5("123456"));
+        user.setUsername("admin");
+        user.setPassword(MD5Utils.text2md5("123"));
 
         //2.调用dao【保存用户】
         userDao.save(user);

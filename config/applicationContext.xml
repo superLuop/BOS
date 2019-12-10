@@ -84,21 +84,35 @@
         <property name="securityManager" ref="securityManager"></property>
         <!--配置登录页面-->
         <property name="loginUrl" value="/login.jsp"></property>
+        <!-- 登录成功后显示的路径 -->
+        <property name="successUrl" value="/index.jsp"></property>
+        <!-- 未授权的页面提示 -->
+        <property name="unauthorizedUrl" value="/unauthorize.jsp"></property>
 
         <!--配置拦截规则
         permission：权限-->
         <property name="filterChainDefinitions">
             <value>
+                /css/** = anon
+                /images/** = anon
+                /js/** = anon
                 /validatecode.jsp* = anon
                 /user_login.action = anon
                 /* = authc
             </value>
         </property>
     </bean>
+
+    <bean id="cacheManager" class="org.apache.shiro.cache.ehcache.EhCacheManager">
+        <property name="cacheManagerConfigFile" value="classpath:ehcache.xml"></property>
+    </bean>
+
     <!--2.配置shiro的安全管理者-->
     <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
         <!--配置一realm对象-->
         <property name="realm" ref="realm"></property>
+        <!--配置缓存管理者-->
+        <property name="cacheManager" ref="cacheManager"></property>
     </bean>
     <!--3.配置一个realm对象,这个对象要实现写一个实现类,实现抽象类AuthorizingRealm-->
     <bean id="realm" class="com.lp.bos.web.realm.BOSRealm"></bean>
@@ -113,4 +127,23 @@
 <!--    <bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor"></bean>-->
 <!--        &lt;!&ndash;配置action&ndash;&gt;-->
 <!--    <bean class="com.lp.bos.web.action.StaffAction" scope="prototype"></bean>-->
+
+    <!-- activiti流程引擎配置对象 -->
+    <bean id="processEngineConfiguration" class="org.activiti.spring.SpringProcessEngineConfiguration">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="transactionManager" ref="transactionManager"/>
+    <!--activiti框架自动创建表-->
+        <property name="databaseSchemaUpdate"  value="true"/>
+    </bean>
+
+    <!-- 使用工厂创建流程引擎对象 -->
+    <bean id="processEngine" class="org.activiti.spring.ProcessEngineFactoryBean">
+        <property name="processEngineConfiguration" ref="processEngineConfiguration"/>
+    </bean>
+    <!-- 配置activiti的Service -->
+    <bean id="repositoryService" factory-bean="processEngine" factory-method="getRepositoryService"/>
+    <bean id="runtimeService" factory-bean="processEngine" factory-method="getRuntimeService"/>
+    <bean id="taskService" factory-bean="processEngine" factory-method="getTaskService"/>
+    <bean id="identityService" factory-bean="processEngine" factory-method="getIdentityService"/>
+    <bean id="historyService" factory-bean="processEngine" factory-method="getHistoryService"/>
 </beans>

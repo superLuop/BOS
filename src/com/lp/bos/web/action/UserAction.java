@@ -3,7 +3,6 @@ package com.lp.bos.web.action;
 import com.lp.bos.model.User;
 import com.lp.bos.utils.MD5Utils;
 import com.lp.bos.web.action.base.BaseAction;
-import org.apache.commons.lang.ArrayUtils;
 import org.apache.log4j.Logger;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
@@ -119,6 +118,7 @@ public class UserAction extends BaseAction<User> {
 
         return NONE;
     }
+
     public void pageQuery() throws IOException {
         pb.setCurrentPage(page);
         pb.setPageSize(rows);

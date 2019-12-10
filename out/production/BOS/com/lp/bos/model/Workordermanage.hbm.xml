@@ -26,5 +26,6 @@
         <property name="vol" column="vol"/>
         <property name="managerCheck" column="managerCheck"/>
         <property name="updatetime" column="updatetime"/>
+        <property name="start" column="start"/>
     </class>
 </hibernate-mapping>

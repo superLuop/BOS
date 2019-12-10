@@ -2,6 +2,9 @@ package com.lp.bos.service.base;
 
 
 import com.lp.bos.dao.*;
+import org.activiti.engine.HistoryService;
+import org.activiti.engine.RuntimeService;
+import org.activiti.engine.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public abstract class BaseServiceImpl<T> implements BaseService<T> {
@@ -35,4 +38,5 @@ public abstract class BaseServiceImpl<T> implements BaseService<T> {
 
     @Autowired
     protected RoleDao roleDao;
+
 }

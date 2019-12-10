@@ -1,6 +1,8 @@
 package com.lp.bos.web.action;
 
 import com.lp.bos.model.Function;
+import com.lp.bos.model.User;
+import com.lp.bos.utils.ContextUtils;
 import com.lp.bos.web.action.base.BaseAction;
 import org.apache.log4j.Logger;
 
@@ -51,5 +53,16 @@ public class FunctionAction extends BaseAction<Function> {
     public void listJson() throws IOException {
         List<Function> functions = functionService.findAll();
         responseJson(functions,new String[]{"function","functions","roles"});
+    }
+
+    public void findMenu() throws IOException {
+        List<Function> menus;
+        User loginUser = ContextUtils.loginUser();
+        if ("admin".equals(loginUser.getUsername())){
+            menus = functionService.findAllMenu();
+        }else {
+            menus = functionService.findMenuByUserId(loginUser.getId());
+        }
+        responseJson(menus,new String[]{"function","functions","roles"});
     }
 }

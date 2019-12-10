@@ -1,9 +1,7 @@
 package com.lp.bos.model;
 
-import javax.persistence.*;
-import java.sql.Date;
+import java.util.Date;
 import java.util.HashSet;
-import java.util.Objects;
 import java.util.Set;
 
 public class Noticebill {

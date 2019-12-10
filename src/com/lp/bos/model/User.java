@@ -1,7 +1,8 @@
 package com.lp.bos.model;
 
 import java.io.Serializable;
-import java.sql.Date;
+import java.util.Date;
+import java.text.SimpleDateFormat;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -17,6 +18,23 @@ public class User implements Serializable {
     private String remark;
     private Set<Role> roles = new HashSet<Role>();
 
+    public String getBirthdayStr(){
+        try {
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            return  sdf.format(birthday);
+        }catch (Exception e){
+            return "";
+        }
+
+    }
+
+    public String getRolesStr(){
+        String str = "";
+        for (Role role : roles){
+            str += role.getName() + "、";
+        }
+        return str;
+    }
     public Set<Role> getRoles() {
         return roles;
     }

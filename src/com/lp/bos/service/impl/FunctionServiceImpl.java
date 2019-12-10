@@ -20,6 +20,16 @@ public class FunctionServiceImpl extends BaseServiceImpl<Function> implements Fu
     }
 
     @Override
+    public List<Function> findMenuByUserId(String id) {
+        return functionDao.findListByUserId(id);
+    }
+
+    @Override
+    public List<Function> findAllMenu() {
+        return functionDao.findAllMenu();
+    }
+
+    @Override
     public void save(Function entity) {
 
         functionDao.save(entity);

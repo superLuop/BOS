@@ -79,14 +79,39 @@
         <!--工单管理模块-->
         <action name="workOrderManage_*" class="com.lp.bos.web.action.WorkOrderManageAction" method="{1}">
             <result name="success">/WEB-INF/pages/qupai/quickworkorder.jsp</result>
+            <result name="list">/WEB-INF/pages/workflow/startransfer.jsp</result>
         </action>
+
         <!--功能权限模块-->
         <action name="function_*" class="com.lp.bos.web.action.FunctionAction" method="{1}">
             <result name="submit">/WEB-INF/pages/admin/function.jsp</result>
         </action>
+
         <!--角色模块-->
         <action name="role_*" class="com.lp.bos.web.action.RoleAction" method="{1}">
             <result name="submit">/WEB-INF/pages/admin/role.jsp</result>
+        </action>
+
+        <!--流程定义模型-->
+        <action name="processDefinition_*" class="com.lp.bos.web.action.ProcessDefinitionAction" method="{1}">
+            <result name="list">/WEB-INF/pages/workflow/processdefinition_list.jsp</result>
+            <!--告诉客户端返回流-文件-->
+            <result name="viewpng" type="stream">
+                <param name="contentType">image/png</param>
+                <param name="inputName">imgIS</param>
+            </result>
+        </action>
+
+        <!-- 流程实例-->
+        <action name="processInstance_*" class="com.lp.bos.web.action.ProcessInstanceAction" method="{1}">
+            <result name="list">/WEB-INF/pages/workflow/processinstance.jsp</result>
+            <result name="showPng">/WEB-INF/pages/workflow/image.jsp</result>
+        </action>
+
+        <action name="task_*" class="com.lp.bos.web.action.TaskAction" method="{1}">
+            <result name="list">/WEB-INF/pages/workflow/grouptask.jsp</result>
+            <result name="personalTaskList">/WEB-INF/pages/workflow/personaltask.jsp</result>
+            <result name="check">/WEB-INF/pages/workflow/check.jsp</result>
         </action>
     </package>
 </struts>

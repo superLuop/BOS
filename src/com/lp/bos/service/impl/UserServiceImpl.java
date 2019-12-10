@@ -1,12 +1,13 @@
 package com.lp.bos.service.impl;
 
-import com.lp.bos.dao.UserDao;
 import com.lp.bos.model.PageBean;
 import com.lp.bos.model.Role;
 import com.lp.bos.model.User;
 import com.lp.bos.service.UserService;
 import com.lp.bos.service.base.BaseServiceImpl;
 import com.lp.bos.utils.MD5Utils;
+import org.activiti.engine.IdentityService;
+import org.activiti.engine.impl.persistence.entity.UserEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -17,6 +18,9 @@ import java.util.List;
 @Service
 @Transactional//事务是由事务管理器来实现
 public class UserServiceImpl extends BaseServiceImpl<User> implements UserService {
+
+    @Autowired
+    private IdentityService identityService;
 
     @Override
     public User findByTel(String tel) {
@@ -38,11 +42,24 @@ public class UserServiceImpl extends BaseServiceImpl<User> implements UserServic
 
     @Override
     public void save(User model, String[] roleIds) {
-        userDao.save(model);
+        //1.保存到user表
+        userDao.save(model);//持久态
+        //2.保存到activiti的act_id_user表
+        org.activiti.engine.identity.User actUser = new UserEntity();
+        actUser.setId(model.getId());//uuid
+        actUser.setFirstName(model.getUsername());
+        identityService.saveUser(actUser);
+
+        //3.用户拥有角色
         for (String roleId : roleIds) {
-            Role role = new Role();
-            role.setId(roleId);
+            Role role = roleDao.findById(roleId);
+//            role.setId(roleId);
             model.getRoles().add(role);
+
+            //4.维护activiti的用户跟组的关系
+            String userId = actUser.getId();
+            String groupId = role.getName();
+            identityService.createMembership(userId,groupId);
         }
     }
 
